@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  devbox:
+    build:
+      context: .
+      dockerfile: devbox.Dockerfile
+      args:
+        VARIANT: buster
+    volumes:
+      - ..:/work/{{project-name}}:cached
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+
+# No need for volumes so far
+#volumes:

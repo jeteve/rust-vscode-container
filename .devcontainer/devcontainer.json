@@ -2,14 +2,17 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/rust
 {
 	"name": "Rust",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			// Use the VARIANT arg to pick a Debian OS version: buster, bullseye
-			// Use bullseye when on local on arm64/Apple Silicon.
-			"VARIANT": "buster"
-		}
-	},
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "devbox",
+	// "build": {
+	// 	"dockerfile": "Dockerfile",
+	// 	"args": {
+	// 		// Use the VARIANT arg to pick a Debian OS version: buster, bullseye
+	// 		// Use bullseye when on local on arm64/Apple Silicon.
+	// 		"VARIANT": "buster"
+	// 	}
+	// },
+	"workspaceFolder": "/work/{{project-name}}",
 	"remoteEnv": {
 		"CARGO_REGISTRY_TOKEN": "${localEnv:CARGO_REGISTRY_TOKEN}"
 	},
