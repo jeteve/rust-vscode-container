@@ -10,3 +10,9 @@ ignore = [ "src/main.rs" ]
 
 [conditional.'crate_type == "bin"']
 ignore = [ "src/lib.rs" ]
+
+# cargo-release?
+[placeholders.with_cargo_release]
+type = "bool"
+prompt = "Use cargo-release for publishing?"
+default = false
