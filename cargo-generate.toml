@@ -16,3 +16,8 @@ ignore = [ "src/lib.rs" ]
 type = "bool"
 prompt = "Use cargo-release for publishing?"
 default = false
+
+[placeholders.with_web_assembly]
+type = "bool"
+prompt = "Will you be doing webassembly?"
+default = false
